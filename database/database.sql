@@ -41,3 +41,60 @@ create table RP(
 	contacto integer,
 	primary key(nome),
 	foreign key(nome) references Pessoa(nome));
+
+create table festival(
+	nome varchar(255),
+	pais varchar(255),
+	cidade varchar(255),
+	preco decimal(5,2),
+	inicio date,
+	fim date,
+	check(start<=end),
+	primary key(nome));
+
+create table Entidade_organizadora(
+	nome varchar(255),
+	descricao varchar(255),
+	primary key(nome));
+
+create table festa(
+	nome_entidade varchar(255),
+	nome_festa varchar(255),
+	data_inicio timestamp,
+	data_fim timestamp,
+	local varchar(255),
+	descricao varchar(255),
+	custo decimal(5,2),
+	primary key(nome_entidade, nome_festa),
+	foreign key(nome_entidade) references Entidade_organizadora(nome));
+
+create table aula(
+	nome_escola varchar(255),
+	nome_prof varchar(255),
+	dia_semana varchar(255),
+	estilo varchar(255),
+	preco decimal(5,2),
+	nivel varchar(255),
+	primary key(nome_escola, nome_prof),
+	foreign key(nome_escola) references Escola_danca(nome),
+	foreign key(nome_prof) references Professor(nome));
+
+create table Aula_aberta(
+	nome_prof varchar(255),
+	nome_entidade varchar(255),
+	nome_festa varchar(255),
+	primary key(nome_prof, nome_entidade, nome_festa),
+	foreign key(nome_prof) references Professor(nome),
+	foreign key(nome_entidade, nome_festa) references festa(nome_entidade, nome_festa));
+
+create table toca(
+	nome_dj varchar(255),
+	nome_entidade varchar(255),
+	nome_festa varchar(255),
+	primary key(nome_dj, nome_entidade, nome_festa),
+	foreign key(nome_entidade, nome_festa) references festa(nome_entidade, nome_festa),
+	foreign key(nome_dj) references DJ(nome));
+
+create table promove(
+	
+)
