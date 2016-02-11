@@ -99,8 +99,8 @@ create table Promove(
 	nome_rp varchar(255),
 	nome_entidade varchar(255),
 	nome_festa varchar(255),
-	primary key(noma_rp, nome_entidade, nome_festa),
-	foreign key(noma_rp) references RP(nome),
+	primary key(nome_rp, nome_entidade, nome_festa),
+	foreign key(nome_rp) references RP(nome),
 	foreign key(nome_entidade, nome_festa) references festa(nome_entidade, nome_festa));
 
 create table constituido(
