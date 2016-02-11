@@ -33,8 +33,8 @@ Released   : 20130902
 		</div>
 		<div id="menu">
 			<ul>
-				<li class="current_page_item"><a href="index.php" accesskey="1" title="">Homepage</a></li>
-				<li><a href="festas.php" accesskey="2" title="">Festas</a></li>
+				<li><a href="index.php" accesskey="1" title="">Homepage</a></li>
+				<li class="current_page_item"><a href="festas.php" accesskey="2" title="">Festas</a></li>
 				<li><a href="aulas.php" accesskey="3" title="">Aulas</a></li>
 				<li><a href="festivais.php" accesskey="4" title="">Festivais</a></li>
 				<li><a href="contact.html" accesskey="5" title="">Contacto</a></li>
