@@ -47,16 +47,14 @@ Released   : 20130902
 		</div>
 		<div id="welcome">
 			<div class="title">
-				<h2>Propósito</h2>
+				<h2>Festas por...</h2>
 			</div>
-			<p>Farto de andar à procura no Facebook das festas? Farto de haver tanta gente a colocar festas que já não encontra a festa que tinha pensado ir? Não se preocupe! Agora é possível filtrar as festas por professor, local, entidade organizadora, etc... Divirta-se e boas kizombadas ;)</p>
-			<ul class="actions">
-				<li><a href="#" class="button">Etiam posuere</a></li>
-			</ul>
+			<p>Farto de procurar uma festa e de não a encontrar?? Nós damos uma ajudinha ;) seleciona os campos para uma pesquisa selectiva</p>
+			
 		</div>
 		<div id="featured">
 			<div class="title">
-				<h2>Próximas festas</h2>
+				<h2>Pesquisa</h2>
 			</div>
 			<p>As festas mais próximas são as apresentadas de seguida. Para outro tipo de pesquisas, ver separador <a href="festas.php"><strong>festas.</strong></a></p>
 			</div>
