@@ -95,6 +95,24 @@ create table toca(
 	foreign key(nome_entidade, nome_festa) references festa(nome_entidade, nome_festa),
 	foreign key(nome_dj) references DJ(nome));
 
-create table promove(
-	
-)
+create table Promove(
+	nome_rp varchar(255),
+	nome_entidade varchar(255),
+	nome_festa varchar(255),
+	primary key(noma_rp, nome_entidade, nome_festa),
+	foreign key(noma_rp) references RP(nome),
+	foreign key(nome_entidade, nome_festa) references festa(nome_entidade, nome_festa));
+
+create table constituido(
+	nome_pessoa varchar(255),
+	nome_festival varchar(255),
+	primary key(nome_pessoa, nome_festival),
+	foreign key(nome_pessoa) references Pessoa(nome),
+	foreign key(nome_festival) references festival(nome));
+
+create table organizado(
+	nome_festival varchar(255),
+	nome_entidade varchar(255),
+	primary key(nome_festival, nome_entidade),
+	foreign key(nome_festival) references festival(nome),
+	foreign key(nome_entidade) references Entidade_organizadora(nome));
