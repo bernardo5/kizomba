@@ -29,7 +29,7 @@ Released   : 20130902
 		<div id="logo">
 			<img src="images.png" alt="" />
 			<h1><a href="#">Kizomba</a></h1>
-			<span>Design by <a href="http://templated.co" rel="nofollow">TEMPLATED</a>, adapted by <a href="https://github.com/bernardo5" rel="nofollow">Bernardo</a></span>
+			<span>Design by <a href="http://templated.co" rel="nofollow">TEMPLATED</a>, adapted by <a href="https://pt.linkedin.com/in/bernardo-gomes-759391b5" rel="nofollow">Bernardo</a></span>
 		</div>
 		<div id="menu">
 			<ul>
