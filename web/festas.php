@@ -61,30 +61,118 @@ Released   : 20130902
 			<div class="title">
 				<h2>Pesquisa</h2>
 			</div>
-			<p>As festas mais próximas são as apresentadas de seguida. Para outro tipo de pesquisas, ver separador <a href="festas.php"><strong>festas.</strong></a></p>
+				<form action="festas_result.php">
+					<p>Selecione a informação de pesquisa de entre as possibilidades:</p>
+					<p>Data da festa:</p>
+					<?php
+						$host = "db.ist.utl.pt";
+						$user = "ist175573";
+						$pass = "swex6595";
+						$dsn = "mysql:host=$host;dbname=$user";
+						try
+						{
+							$connection = new PDO($dsn, $user, $pass);
+						}
+						catch(PDOException $exception)
+						{
+							echo("<p>Error: ");
+							echo($exception->getMessage());
+							echo("</p>");
+							exit();
+						}
+						/*tirar da base de dados as datas das festas*/
+						$sql="select distinct data_inicio from festa;";
+						
+						$result = $connection->query($sql);
+						if ($result == FALSE)
+						{
+							$info = $connection->errorInfo();
+							echo("<p>Error: {$info[2]}</p>");
+							exit();
+						}
+						/**********************************************/
+						
+						echo("<table border=\"1\" align=\"center\">");
+						echo("<tr><td>data_inicio</td><td>selecionar</td></tr>");
+						foreach($result as $row)
+						{
+							echo("<tr><td>");
+							echo($row['data_inicio']);
+							echo("</td><td>");
+							$numb=$row['data_inicio'];
+							echo("<input type=\"radio\" name=\"data\" value=\"$numb\" />");
+							echo("</td></tr>");
+						}
+						echo("</table>");
+						
+						
+						/*Pesquisa pela entidade de organizacao*/
+						echo("<p></p><p></p>");
+						echo("<p>Entidade Organizadora:</p>");
+						$sql="select distinct nome_entidade from festa;";
+						
+						$result = $connection->query($sql);
+						if ($result == FALSE)
+						{
+							$info = $connection->errorInfo();
+							echo("<p>Error: {$info[2]}</p>");
+							exit();
+						}
+						
+						echo("<table border=\"1\" align=\"center\">");
+						echo("<tr><td>Organização</td><td>selecionar</td></tr>");
+						foreach($result as $row)
+						{
+							echo("<tr><td>");
+							echo($row['nome_entidade']);
+							echo("</td><td>");
+							$numb=$row['nome_entidade'];
+							echo("<input type=\"radio\" name=\"entidade\" value=\"$numb\" />");
+							echo("</td></tr>");
+						}
+						echo("</table>");
+						
+						/*****************************************/
+						
+						/*Pesquisa por local*/
+						echo("<p></p><p></p>");
+						echo("<p>Local:</p>");
+						$sql="select distinct local from festa;";
+						
+						$result = $connection->query($sql);
+						if ($result == FALSE)
+						{
+							$info = $connection->errorInfo();
+							echo("<p>Error: {$info[2]}</p>");
+							exit();
+						}
+						
+						echo("<table border=\"1\" align=\"center\">");
+						echo("<tr><td>Local do evento</td><td>selecionar</td></tr>");
+						foreach($result as $row)
+						{
+							echo("<tr><td>");
+							echo($row['local']);
+							echo("</td><td>");
+							$numb=$row['local'];
+							echo("<input type=\"radio\" name=\"local\" value=\"$numb\" />");
+							echo("</td></tr>");
+						}
+						echo("</table>");
+						
+						
+						/*****************************************/
+						
+					    $connection = null;
+					
+					?>
+					<p></p>
+					<p></p>
+					<p></p>
+					<p></p>
+					<input type="submit" name="submit" value="submit" />
+				</form>
 			</div>
-			<ul class="style1">
-				<li class="first">
-					<p class="date"><a href="#">Jan<b>05</b></a></p>
-					<h3>Amet sed volutpat mauris</h3>
-					<p><a href="#">Consectetuer adipiscing elit. Nam pede erat, porta eu, lobortis eget, tempus et, tellus. Etiam neque. Vivamus consequat lorem at nisl. Nullam non wisi a sem semper eleifend. Etiam non felis. Donec ut ante.</a></p>
-				</li>
-				<li>
-					<p class="date"><a href="#">Jan<b>03</b></a></p>
-					<h3>Sagittis diam dolor amet</h3>
-					<p><a href="#">Etiam non felis. Donec ut ante. In id eros. Suspendisse lacus turpis, cursus egestas at sem. Mauris quam enim, molestie. Donec leo, vivamus fermentum nibh in augue praesent congue rutrum.</a></p>
-				</li>
-				<li>
-					<p class="date"><a href="#">Jan<b>01</b></a></p>
-					<h3>Amet sed volutpat mauris</h3>
-					<p><a href="#">Consectetuer adipiscing elit. Nam pede erat, porta eu, lobortis eget, tempus et, tellus. Etiam neque. Vivamus consequat lorem at nisl. Nullam non wisi a sem semper eleifend. Etiam non felis. Donec ut ante.</a></p>
-				</li>
-				<li>
-					<p class="date"><a href="#">Dec<b>31</b></a></p>
-					<h3>Sagittis diam dolor amet</h3>
-					<p><a href="#">Etiam non felis. Donec ut ante. In id eros. Suspendisse lacus turpis, cursus egestas at sem. Mauris quam enim, molestie. Donec leo, vivamus fermentum nibh in augue praesent congue rutrum.</a></p>
-				</li>
-			</ul>
 		</div>
 	</div>
 </div>
