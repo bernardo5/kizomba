@@ -38,6 +38,11 @@ Released   : 20130902
 				<li><a href="aulas.php" accesskey="3" title="">Aulas</a></li>
 				<li><a href="festivais.php" accesskey="4" title="">Festivais</a></li>
 				<li><a href="contact.html" accesskey="5" title="">Contacto</a></li>
+				<li>
+					<audio controls>
+						<source src="my_plylist.mp3" type="audio/mpeg">
+					</audio>
+				</li>
 			</ul>
 		</div>
 	</div>
