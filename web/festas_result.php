@@ -88,10 +88,15 @@ Released   : 20130902
 					echo("<p></p>");
 					echo($local);
 					echo("<p></p>");*/					
-					$sql="select * from festa 
-						where data_inicio like '%$data%' 
-						and nome_entidade like '%$organizacao%' 
-						and local like '%$local%';";
+					$sql="select f.nome_entidade, f.nome_festa, f.data_inicio, f.data_fim, f.local, f.descricao, f.custo, A.nome_prof, t.nome_dj, P.nome_rp, R.contacto
+							from festa as f, Aula_aberta as A, toca as t, Promove as P, RP as R
+						where f.data_inicio like '%$data%' 
+						and f.nome_entidade like '%$organizacao%' 
+						and f.local like '%$local%'
+						and A.nome_festa=f.nome_festa
+						and t.nome_festa=f.nome_festa
+						and P.nome_festa=f.nome_festa
+						and R.nome=P.nome_rp;";
 						
 					$result = $connection->query($sql);
 					if ($result == FALSE)
@@ -107,7 +112,7 @@ Released   : 20130902
 					if($nrows!=0) /*ha festa*/
 					{
 						echo("<table border=\"1\" align=\"center\">");
-						echo("<tr><td><strong>Entidade Organizadora</strong></td><td><strong>nome da festa</strong></td><td><strong>data e hora</strong></td><td><strong>data e hora de fim</strong></td><td><strong>local</strong></td><td><strong>descrição da festa</strong></td><td><strong>custo</strong></td></tr>");
+						echo("<tr><td><strong>Entidade Organizadora</strong></td><td><strong>nome da festa</strong></td><td><strong>data e hora</strong></td><td><strong>data e hora de fim</strong></td><td><strong>local</strong></td><td><strong>descrição da festa</strong></td><td><strong>custo</strong></td><td><strong>Aula_aberta</strong></td><td><strong>DJ</strong></td><td><strong>RP</strong></td><td><strong>guest</strong></td></tr>");
 						foreach($result as $row)
 						{
 							echo("<tr><td>");
@@ -124,6 +129,14 @@ Released   : 20130902
 							echo($row['descricao']);
 							echo("</td><td>");
 							echo($row['custo']);
+							echo("</td><td>");
+							echo($row['nome_prof']);
+							echo("</td><td>");
+							echo($row['nome_dj']);
+							echo("</td><td>");
+							echo($row['nome_rp']);
+							echo("</td><td>");
+							echo($row['contacto']);
 							echo("</td></tr>");
 						}
 						echo("</table>");						
