@@ -90,15 +90,15 @@ Released   : 20130902
 					echo("<p></p>");
 					echo($local);
 					echo("<p></p>");*/					
-					$sql="select f.nome_entidade, f.nome_festa, f.data_inicio, f.data_fim, f.local, f.descricao, f.custo, A.nome_prof, t.nome_dj, P.nome_rp, R.contacto
-							from festa as f, Aula_aberta as A, toca as t, Promove as P, RP as R
-						where f.data_inicio like '%$data%' 
-						and f.nome_entidade like '%$organizacao%' 
-						and f.local like '%$local%'
-						and A.nome_festa=f.nome_festa
-						and t.nome_festa=f.nome_festa
-						and P.nome_festa=f.nome_festa
-						and R.nome=P.nome_rp;";
+					$sql="select a.dia_semana, a.estilo, a.nome_prof, a.nivel, a.preco, e.nome, e.morada
+							from aula as a, Professor as p, Escola_danca as e
+						where a.dia_semana like '%$dia%'
+						and a.estilo like '%$estilo%'
+						and a.nivel like '%$nivel%'
+						and p.nome like '%$prof%'
+						and e.cidade like '%$cidade%'
+						and p.nome=a.nome_prof
+						and a.nome_escola=e.nome;";
 						
 					$result = $connection->query($sql);
 					if ($result == FALSE)
@@ -114,45 +114,37 @@ Released   : 20130902
 					if($nrows!=0) /*ha festa*/
 					{
 						echo("<table border=\"1\" align=\"center\">");
-						echo("<tr><td><strong>Entidade Organizadora</strong></td><td><strong>nome da festa</strong></td><td><strong>data e hora</strong></td><td><strong>data e hora de fim</strong></td><td><strong>local</strong></td><td><strong>descrição da festa</strong></td><td><strong>custo</strong></td><td><strong>Aula_aberta</strong></td><td><strong>DJ</strong></td><td><strong>RP</strong></td><td><strong>guest</strong></td></tr>");
+						echo("<tr><td><strong>dia</strong></td><td><strong>estilo</strong></td><td><strong>Professor</strong></td><td><strong>nivel</strong></td><td><strong>preço</strong></td><td><strong>escola</strong></td><td><strong>morada</strong></td></tr>");
 						foreach($result as $row)
 						{
 							echo("<tr><td>");
-							echo($row['nome_entidade']);
+							echo($row['dia_semana']);
 							echo("</td><td>");
-							echo($row['nome_festa']);
-							echo("</td><td>");
-							echo($row['data_inicio']);
-							echo("</td><td>");
-							echo($row['data_fim']);
-							echo("</td><td>");
-							echo($row['local']);
-							echo("</td><td>");
-							echo($row['descricao']);
-							echo("</td><td>");
-							echo($row['custo']);
+							echo($row['estilo']);
 							echo("</td><td>");
 							echo($row['nome_prof']);
 							echo("</td><td>");
-							echo($row['nome_dj']);
+							echo($row['nivel']);
 							echo("</td><td>");
-							echo($row['nome_rp']);
+							echo($row['preco']);
 							echo("</td><td>");
-							echo($row['contacto']);
+							echo($row['nome']);
+							echo("</td><td>");
+							echo($row['morada']);
 							echo("</td></tr>");
 						}
 						echo("</table>");						
 					}
 					else
 					{
-							echo("<p>Não há festas com os requesitos pretendidos</p>");
+							echo("<p>Não há aulas com os requesitos pretendidos</p>");
 					}
 					/*****************************************/
 						
 				    $connection = null;
 					
 				?>
-				<p><a href="festas.php" accesskey="2" title="">Voltar à pesquisa</a></p>
+				<p><a href="aulas.php" accesskey="2" title="">Voltar à pesquisa</a></p>
 			</div>
 		</div>
 	</div>
