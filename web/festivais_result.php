@@ -83,21 +83,16 @@ Released   : 20130902
 					$cidade=$_REQUEST['cidade'];
 					$pais=$_REQUEST['pais'];
 					$preco=$_REQUEST['preco'];
-					
-					echo($nome);
-					echo($organizacao);
-					echo($cidade);
-					echo($pais);
-					echo($preco);
 										
-					$sql="Select nome, pais, cidade, preco, inicio, fim
-					from festival
-					where
-					 nome like '%$nome%'
-					
+					$sql="Select nome_festival, nome_entidade, pais, cidade, preco, inicio, fim
+					from festival, organizado, Entidade_organizadora
+					where nome_festival like '%$nome%'
 					and cidade like '%$cidade%'
 					and preco like '%$preco%'
 					and pais like '%$pais%'
+					and nome_entidade like '%$organizacao%'
+					and nome_festival=festival.nome
+					and nome_entidade=Entidade_organizadora.nome;
 					";
 					/*and e.nome like '%$organizacao%'*/
 					/* o.nome_festival=f.nome and o.nome_entidade =e.nome*/
@@ -116,11 +111,13 @@ Released   : 20130902
 					if($nrows!=0) /*ha festa*/
 					{
 						echo("<table border=\"1\" align=\"center\">");
-						echo("<tr><td><strong>Festival</strong></td><td><strong>Pais</strong></td><td><strong>Cidade</strong></td><td><strong>preço</strong></td><td><strong>inicio</strong></td><td><strong>fim</strong></td></tr>");
+						echo("<tr><td><strong>Festival</strong></td><td><strong>Entidade</strong></td><td><strong>Pais</strong></td><td><strong>Cidade</strong></td><td><strong>preço</strong></td><td><strong>inicio</strong></td><td><strong>fim</strong></td></tr>");
 						foreach($result as $row)
 						{
 							echo("<tr><td>");
-							echo($row['nome']);
+							echo($row['nome_festival']);
+							echo("</td><td>");
+							echo($row['nome_entidade']);
 							echo("</td><td>");
 							echo($row['pais']);
 							echo("</td><td>");

@@ -51,3 +51,4 @@ insert into constituido values('Petchu', 'Afrofever');
 insert into constituido values('Ben Pedrosa', 'Afrofever');
 
 insert into organizado values ('Afrofever', 'Afrofever');
+insert into organizado values ('Workshop Iberico', 'Ben Pedrosa');
