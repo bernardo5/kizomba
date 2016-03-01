@@ -24,10 +24,10 @@ insert into DJ values('Banderas');
 
 insert into RP values('Bernardo', 962158785);
 
-insert into festival values('Afrofever', 'Portugal', 'Lisboa', 120, '2016-03-01', '2016-03-03');
-insert into festival values('Workshop Ibérico', 'Portugal', 'Albufeira', 150, '2016-03-05', '2016-03-07');
+insert into festival values('Afrofever', 'Portugal', 'Lisboa', '120', '2016-03-01', '2016-03-03');
+insert into festival values('Workshop Iberico', 'Portugal', 'Albufeira', '150', '2016-03-05', '2016-03-07');
 
-insert into Entidade_organizadora values('Ben Pedrosa', 'Também professor de Kizomba');
+insert into Entidade_organizadora values('Ben Pedrosa', 'Tambem professor de Kizomba');
 insert into Entidade_organizadora values('Afrofever', 'Desde mil nove e picos a organizar');
 insert into Entidade_organizadora values('River Party', 'festas em lisboa');
 insert into Entidade_organizadora values('Havana', 'festas em lisboa+aulas');

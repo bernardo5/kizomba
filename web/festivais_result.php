@@ -35,8 +35,8 @@ Released   : 20130902
 			<ul>
 				<li><a href="index.php" accesskey="1" title="">Homepage</a></li>
 				<li><a href="festas.php" accesskey="2" title="">Festas</a></li>
-				<li class="current_page_item"><a href="aulas.php" accesskey="3" title="">Aulas</a></li>
-				<li><a href="festivais.php" accesskey="4" title="">Festivais</a></li>
+				<li><a href="aulas.php" accesskey="3" title="">Aulas</a></li>
+				<li class="current_page_item"><a href="festivais.php" accesskey="4" title="">Festivais</a></li>
 				<li><a href="contact.html" accesskey="5" title="">Contacto</a></li>
 				<li>
 					<audio controls>
@@ -52,9 +52,9 @@ Released   : 20130902
 		</div>
 		<div id="welcome">
 			<div class="title">
-				<h2>Festas por...</h2>
+				<h2>Festivais por...</h2>
 			</div>
-			<p>O resultado da sua pesquisa encontra-se apresentado de seguida. No caso de não terem surgido aulas, experimente retirar um campo de pesquisa, ou alterar um deles.</p>
+			<p>O resultado da sua pesquisa encontra-se apresentado de seguida. No caso de não terem surgido festivais, experimente retirar um campo de pesquisa, ou alterar um deles.</p>
 			
 		</div>
 		<div id="featured">
@@ -78,27 +78,29 @@ Released   : 20130902
 						exit();
 					}
 					/*busca de resultados para a pesquisa*/
-					$dia=$_REQUEST['dia_semana'];
-					$estilo=$_REQUEST['estilo'];
-					$cidade=$_REQUEST['local'];
-					$prof=$_REQUEST['prof'];
-					$nivel=$_REQUEST['nivel'];
+					$nome=$_REQUEST['nome_festival'];
+					$organizacao=$_REQUEST['organizacao'];
+					$cidade=$_REQUEST['cidade'];
+					$pais=$_REQUEST['pais'];
+					$preco=$_REQUEST['preco'];
 					
-					/*echo($data);
-					echo("<p></p>");
+					echo($nome);
 					echo($organizacao);
-					echo("<p></p>");
-					echo($local);
-					echo("<p></p>");*/					
-					$sql="select a.dia_semana, a.estilo, a.nome_prof, a.nivel, a.preco, e.nome, e.morada
-							from aula as a, Professor as p, Escola_danca as e
-						where a.dia_semana like '%$dia%'
-						and a.estilo like '%$estilo%'
-						and a.nivel like '%$nivel%'
-						and p.nome like '%$prof%'
-						and e.cidade like '%$cidade%'
-						and p.nome=a.nome_prof
-						and a.nome_escola=e.nome;";
+					echo($cidade);
+					echo($pais);
+					echo($preco);
+										
+					$sql="Select nome, pais, cidade, preco, inicio, fim
+					from festival
+					where
+					 nome like '%$nome%'
+					
+					and cidade like '%$cidade%'
+					and preco like '%$preco%'
+					and pais like '%$pais%'
+					";
+					/*and e.nome like '%$organizacao%'*/
+					/* o.nome_festival=f.nome and o.nome_entidade =e.nome*/
 						
 					$result = $connection->query($sql);
 					if ($result == FALSE)
@@ -114,37 +116,35 @@ Released   : 20130902
 					if($nrows!=0) /*ha festa*/
 					{
 						echo("<table border=\"1\" align=\"center\">");
-						echo("<tr><td><strong>dia</strong></td><td><strong>estilo</strong></td><td><strong>Professor</strong></td><td><strong>nivel</strong></td><td><strong>preço</strong></td><td><strong>escola</strong></td><td><strong>morada</strong></td></tr>");
+						echo("<tr><td><strong>Festival</strong></td><td><strong>Pais</strong></td><td><strong>Cidade</strong></td><td><strong>preço</strong></td><td><strong>inicio</strong></td><td><strong>fim</strong></td></tr>");
 						foreach($result as $row)
 						{
 							echo("<tr><td>");
-							echo($row['dia_semana']);
+							echo($row['nome']);
 							echo("</td><td>");
-							echo($row['estilo']);
+							echo($row['pais']);
 							echo("</td><td>");
-							echo($row['nome_prof']);
-							echo("</td><td>");
-							echo($row['nivel']);
+							echo($row['cidade']);
 							echo("</td><td>");
 							echo($row['preco']);
 							echo("</td><td>");
-							echo($row['nome']);
+							echo($row['inicio']);
 							echo("</td><td>");
-							echo($row['morada']);
+							echo($row['fim']);
 							echo("</td></tr>");
 						}
 						echo("</table>");						
 					}
 					else
 					{
-							echo("<p>Não há aulas com os requesitos pretendidos</p>");
+							echo("<p>Não há festivais com os requesitos pretendidos</p>");
 					}
 					/*****************************************/
 						
 				    $connection = null;
 					
 				?>
-				<p><a href="aulas.php" accesskey="2" title="">Voltar à pesquisa</a></p>
+				<p><a href="festivais.php" accesskey="4" title="">Voltar à pesquisa</a></p>
 			</div>
 		</div>
 	</div>

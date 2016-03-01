@@ -46,7 +46,7 @@ create table festival(
 	nome varchar(255),
 	pais varchar(255),
 	cidade varchar(255),
-	preco decimal(5,2),
+	preco varchar(255),
 	inicio date,
 	fim date,
 	check(start<=end),

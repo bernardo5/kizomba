@@ -61,9 +61,9 @@ Released   : 20130902
 			<div class="title">
 				<h2>Pesquisa</h2>
 			</div>
-				<form action="aulas_result.php">
+				<form action="festivais_result.php">
 					<p>Selecione a informação de pesquisa de entre as possibilidades:</p>
-					<p>Dia da semana:</p>
+					<p>Nomes do festival:</p>
 					<?php
 						$host = "db.ist.utl.pt";
 						$user = "ist175573";
@@ -81,7 +81,7 @@ Released   : 20130902
 							exit();
 						}
 						/*tirar da base de dados as datas das festas*/
-						$sql="select distinct dia_semana from aula;";
+						$sql="select distinct nome from festival;";
 						
 						$result = $connection->query($sql);
 						if ($result == FALSE)
@@ -93,14 +93,14 @@ Released   : 20130902
 						/**********************************************/
 						
 						echo("<table border=\"1\" align=\"center\">");
-						echo("<tr><td>dia da semana</td><td>selecionar</td></tr>");
+						echo("<tr><td>festival</td><td>selecionar</td></tr>");
 						foreach($result as $row)
 						{
 							echo("<tr><td>");
-							echo($row['dia_semana']);
+							echo($row['nome']);
 							echo("</td><td>");
-							$numb=$row['dia_semana'];
-							echo("<input type=\"radio\" name=\"dia_semana\" value=\"$numb\" />");
+							$numb=$row['nome'];
+							echo("<input type=\"radio\" name=\"nome_festival\" value=\"$numb\" />");
 							echo("</td></tr>");
 						}
 						echo("</table>");
@@ -108,8 +108,8 @@ Released   : 20130902
 						
 						/*Pesquisa pela entidade de organizacao*/
 						echo("<p></p><p></p>");
-						echo("<p>Estilo:</p>");
-						$sql="select distinct estilo from aula;";
+						echo("<p>Organizacao:</p>");
+						$sql="select distinct nome from Entidade_organizadora;";
 						
 						$result = $connection->query($sql);
 						if ($result == FALSE)
@@ -120,14 +120,14 @@ Released   : 20130902
 						}
 						
 						echo("<table border=\"1\" align=\"center\">");
-						echo("<tr><td>Estilo</td><td>selecionar</td></tr>");
+						echo("<tr><td>Organizacao</td><td>selecionar</td></tr>");
 						foreach($result as $row)
 						{
 							echo("<tr><td>");
-							echo($row['estilo']);
+							echo($row['nome']);
 							echo("</td><td>");
-							$numb=$row['estilo'];
-							echo("<input type=\"radio\" name=\"estilo\" value=\"$numb\" />");
+							$numb=$row['nome'];
+							echo("<input type=\"radio\" name=\"organizacao\" value=\"$numb\" />");
 							echo("</td></tr>");
 						}
 						echo("</table>");
@@ -136,8 +136,8 @@ Released   : 20130902
 						
 						/*Pesquisa por local*/
 						echo("<p></p><p></p>");
-						echo("<p>Cidade:</p>");
-						$sql="select distinct cidade from Escola_danca;";
+						echo("<p>Pais:</p>");
+						$sql="select distinct pais from festival;";
 						
 						$result = $connection->query($sql);
 						if ($result == FALSE)
@@ -148,14 +148,14 @@ Released   : 20130902
 						}
 						
 						echo("<table border=\"1\" align=\"center\">");
-						echo("<tr><td>Cidade</td><td>selecionar</td></tr>");
+						echo("<tr><td>Pais</td><td>selecionar</td></tr>");
 						foreach($result as $row)
 						{
 							echo("<tr><td>");
-							echo($row['cidade']);
+							echo($row['pais']);
 							echo("</td><td>");
-							$numb=$row['cidade'];
-							echo("<input type=\"radio\" name=\"local\" value=\"$numb\" />");
+							$numb=$row['pais'];
+							echo("<input type=\"radio\" name=\"pais\" value=\"$numb\" />");
 							echo("</td></tr>");
 						}
 						echo("</table>");
@@ -166,8 +166,8 @@ Released   : 20130902
 						
 						/*Pesquisa por nome do professor*/
 						echo("<p></p><p></p>");
-						echo("<p>Professor:</p>");
-						$sql="select distinct nome from Professor;";
+						echo("<p>Cidade:</p>");
+						$sql="select distinct cidade from festival;";
 						
 						$result = $connection->query($sql);
 						if ($result == FALSE)
@@ -178,14 +178,14 @@ Released   : 20130902
 						}
 						
 						echo("<table border=\"1\" align=\"center\">");
-						echo("<tr><td>Professor</td><td>selecionar</td></tr>");
+						echo("<tr><td>cidade</td><td>selecionar</td></tr>");
 						foreach($result as $row)
 						{
 							echo("<tr><td>");
-							echo($row['nome']);
+							echo($row['cidade']);
 							echo("</td><td>");
-							$numb=$row['nome'];
-							echo("<input type=\"radio\" name=\"prof\" value=\"$numb\" />");
+							$numb=$row['cidade'];
+							echo("<input type=\"radio\" name=\"cidade\" value=\"$numb\" />");
 							echo("</td></tr>");
 						}
 						echo("</table>");
@@ -195,8 +195,8 @@ Released   : 20130902
 						
 						/*Pesquisa por nome do nivel*/
 						echo("<p></p><p></p>");
-						echo("<p>Níveis:</p>");
-						$sql="select distinct nivel from aula;";
+						echo("<p>Preco:</p>");
+						$sql="select distinct preco from festival;";
 						
 						$result = $connection->query($sql);
 						if ($result == FALSE)
@@ -207,14 +207,14 @@ Released   : 20130902
 						}
 						
 						echo("<table border=\"1\" align=\"center\">");
-						echo("<tr><td>Nível</td><td>selecionar</td></tr>");
+						echo("<tr><td>Preco</td><td>selecionar</td></tr>");
 						foreach($result as $row)
 						{
 							echo("<tr><td>");
-							echo($row['nivel']);
+							echo($row['preco']);
 							echo("</td><td>");
-							$numb=$row['nivel'];
-							echo("<input type=\"radio\" name=\"nivel\" value=\"$numb\" />");
+							$numb=$row['preco'];
+							echo("<input type=\"radio\" name=\"preco\" value=\"$numb\" />");
 							echo("</td></tr>");
 						}
 						echo("</table>");
