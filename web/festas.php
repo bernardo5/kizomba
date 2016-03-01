@@ -81,7 +81,8 @@ Released   : 20130902
 							exit();
 						}
 						/*tirar da base de dados as datas das festas*/
-						$sql="select distinct data_inicio from festa;";
+						$sql="select distinct data_inicio from festa
+						where data_inicio >= current_timestamp;";
 						
 						$result = $connection->query($sql);
 						if ($result == FALSE)

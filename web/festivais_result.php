@@ -92,6 +92,7 @@ Released   : 20130902
 					and pais like '%$pais%'
 					and nome_entidade like '%$organizacao%'
 					and nome_festival=festival.nome
+					and inicio>=current_date
 					and nome_entidade=Entidade_organizadora.nome;
 					";
 					/*and e.nome like '%$organizacao%'*/

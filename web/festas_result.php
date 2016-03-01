@@ -96,6 +96,7 @@ Released   : 20130902
 						and A.nome_festa=f.nome_festa
 						and t.nome_festa=f.nome_festa
 						and P.nome_festa=f.nome_festa
+						and f.data_inicio>=current_timestamp
 						and R.nome=P.nome_rp;";
 						
 					$result = $connection->query($sql);
