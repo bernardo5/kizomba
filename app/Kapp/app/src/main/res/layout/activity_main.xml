@@ -9,6 +9,13 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.example.bernardo.kapp.MainActivity">
 
+    <TextView
+        android:layout_width="match_parent" android:layout_height="wrap_content"
+        android:text="Bem vindo! Disfrute do melhor do mundo da Kizomba!"  android:layout_span="4"
+        android:textSize="17sp"
+        android:padding="24dip"
+        android:textColor="#000"/>
+
     <TableLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -21,34 +28,13 @@
             android:layout_width="fill_parent"
             android:gravity="center_horizontal">
 
-            <ImageButton
-                android:id="@+id/imageButton1"
-                android:layout_width="wrap_content"
-                android:src="@mipmap/ic_launcher"
-                android:layout_alignParentLeft="true"
-                android:layout_alignParentStart="true"
-                android:layout_alignParentTop="true"
-                android:layout_column="0" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:textSize="16dp" android:text="Bem-vindo! Disfrute do melhor da kizomba!"
-                android:textColor="#000"
-                android:id="@+id/welcome1"
-                android:layout_column="2" />
-        </TableRow>
-
-        <TableRow
-            android:layout_height="wrap_content"
-            android:layout_width="fill_parent"
-            android:gravity="center_horizontal">
-
 
             <TextView
                 android:layout_width="match_parent" android:layout_height="wrap_content"
-                android:text=""  android:layout_span="4"
+                android:text=""
                 android:padding="18dip"
-                android:textColor="#000"/>
+                android:textColor="#000"
+                android:layout_column="8" />
 
 
         </TableRow>
@@ -76,13 +62,52 @@
             android:gravity="center_horizontal">
 
             <TextView
+                android:id="@+id/TextView01" android:text="Row 3 column 1"
+                android:layout_weight="1"  android:background="#b0b0b0"
+                android:textColor="#000000"
+                android:padding="18dip" android:gravity="center"/>
+
+            <TextView
+                android:id="@+id/TextView02" android:text="Festas"
+                android:layout_weight="1" android:background="#a09f9f"
+                android:textColor="#000000"
+                android:padding="18dip" android:gravity="center"
+                android:layout_column="2" />
+        </TableRow>
+
+        <TableRow
+            android:layout_height="wrap_content"
+            android:layout_width="fill_parent"
+            android:gravity="center_horizontal">
+
+            <TextView
                 android:id="@+id/TextView03" android:text="Row 3 column 1"
                 android:layout_weight="1"  android:background="#b0b0b0"
                 android:textColor="#000000"
                 android:padding="18dip" android:gravity="center"/>
 
             <TextView
-                android:id="@+id/TextView04" android:text="Row 3 column 2"
+                android:id="@+id/TextView04" android:text="Aulas"
+                android:layout_weight="1" android:background="#a09f9f"
+                android:textColor="#000000"
+                android:padding="18dip" android:gravity="center"
+                android:layout_column="2" />
+        </TableRow>
+
+
+        <TableRow
+            android:layout_height="wrap_content"
+            android:layout_width="fill_parent"
+            android:gravity="center_horizontal">
+
+            <TextView
+                android:id="@+id/TextView05" android:text="Row 3 column 1"
+                android:layout_weight="1"  android:background="#b0b0b0"
+                android:textColor="#000000"
+                android:padding="18dip" android:gravity="center"/>
+
+            <TextView
+                android:id="@+id/TextView06" android:text="Festivais"
                 android:layout_weight="1" android:background="#a09f9f"
                 android:textColor="#000000"
                 android:padding="18dip" android:gravity="center"

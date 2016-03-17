@@ -15,10 +15,10 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        addListenerOnButton();
+       /* addListenerOnButton();*/
     }
 
-    public void addListenerOnButton() {
+   /* public void addListenerOnButton() {
 
         imageButton = (ImageButton) findViewById(R.id.imageButton1);
 
@@ -34,5 +34,5 @@ public class MainActivity extends AppCompatActivity {
 
         });
 
-    }
+    }*/
 }
