@@ -42,6 +42,10 @@ public class MainActivity extends AppCompatActivity {
                 Toast.makeText(MainActivity.this,
                         "FestasButton is clicked!", Toast.LENGTH_SHORT).show();
                 break;
+            case R.id.imageFestas:
+                Toast.makeText(MainActivity.this,
+                        "FestasButton is clicked!", Toast.LENGTH_SHORT).show();
+                break;
             case R.id.button_aulas:
                 Toast.makeText(MainActivity.this,
                         "AulasButton is clicked!", Toast.LENGTH_SHORT).show();
