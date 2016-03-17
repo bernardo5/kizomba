@@ -35,4 +35,21 @@ public class MainActivity extends AppCompatActivity {
         });
 
     }*/
+
+    public void onClick(final View v){
+        switch(v.getId()){
+            case R.id.button_festas:
+                Toast.makeText(MainActivity.this,
+                        "FestasButton is clicked!", Toast.LENGTH_SHORT).show();
+                break;
+            case R.id.button_aulas:
+                Toast.makeText(MainActivity.this,
+                        "AulasButton is clicked!", Toast.LENGTH_SHORT).show();
+                break;
+            case R.id.button_festivais:
+                Toast.makeText(MainActivity.this,
+                        "FestivaisButton is clicked!", Toast.LENGTH_SHORT).show();
+                break;
+        }
+    }
 }

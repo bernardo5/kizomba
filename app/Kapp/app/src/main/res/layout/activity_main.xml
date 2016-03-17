@@ -73,7 +73,8 @@
                 android:id="@+id/button_festas"
                 android:layout_width="wrap_content"
                 android:text="Festas"
-                android:layout_column="2">
+                android:layout_column="2"
+                android:onClick="onClick">
             </Button>
 
         </TableRow>
@@ -94,6 +95,7 @@
                 android:id="@+id/button_aulas"
                 android:layout_width="wrap_content"
                 android:text="Aulas"
+                android:onClick="onClick"
                 android:layout_column="2">
             </Button>
         </TableRow>
@@ -116,6 +118,7 @@
                 android:id="@+id/button_festivais"
                 android:layout_width="wrap_content"
                 android:text="Festivais"
+                android:onClick="onClick"
                 android:layout_column="2">
             </Button>
         </TableRow>
