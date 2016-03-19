@@ -67,13 +67,14 @@
                 android:id="@+id/imageFestas"
                 android:onClick="onClick"
                 android:layout_column="0"
-                android:src="@drawable/festas_image_button"/>
+                android:src="@drawable/ic_festas_image_button"/>
 
 
             <Button
-                android:layout_height="wrap_content"
+                android:scaleType="fitCenter"
+                android:layout_height="50dp"
+                android:height="50dp"
                 android:id="@+id/button_festas"
-                android:layout_width="wrap_content"
                 android:text="Festas"
                 android:layout_column="2"
                 android:onClick="onClick">
