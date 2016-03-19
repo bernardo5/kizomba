@@ -8,8 +8,8 @@ import android.widget.ImageButton;
 import android.widget.Toast;
 import android.view.View;
 import android.view.View.OnClickListener;
-
-
+import android.net.Uri;
+import android.content.Intent;
 public class MainActivity extends AppCompatActivity {
     ImageButton imageButton;
     @Override
@@ -63,6 +63,15 @@ public class MainActivity extends AppCompatActivity {
                 Toast.makeText(MainActivity.this,
                         "FestivaisButton is clicked!", Toast.LENGTH_SHORT).show();
                 break;
+            case R.id.Site:
+                goToUrl ( "http://web.tecnico.ulisboa.pt/ist175573");
+                break;
         }
+    }
+
+    private void goToUrl (String url) {
+        Uri uriUrl = Uri.parse(url);
+        Intent launchBrowser = new Intent(Intent.ACTION_VIEW, uriUrl);
+        startActivity(launchBrowser);
     }
 }

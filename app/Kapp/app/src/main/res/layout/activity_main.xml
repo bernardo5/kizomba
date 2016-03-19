@@ -132,7 +132,30 @@
                 </Button>
             </TableRow>
 
+            <TableRow
+                android:layout_height="wrap_content"
+                android:layout_width="fill_parent"
+                android:gravity="center_horizontal">
+
+                <TextView
+                    android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:text="@string/site"  android:layout_span="4"
+                    android:textSize="17sp"
+                    android:padding="24dip"
+                    android:textColor="#000"/>
+
+                <Button
+                    android:layout_height="wrap_content"
+                    android:id="@+id/Site"
+                    android:layout_width="wrap_content"
+                    android:text="Ir!"
+                    android:onClick="onClick"
+                    android:layout_column="2">
+                </Button>
+            </TableRow>
 
         </TableLayout>
+
+
     </ScrollView>
 </RelativeLayout>
