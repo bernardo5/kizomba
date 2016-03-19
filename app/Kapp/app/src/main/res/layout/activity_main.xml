@@ -15,119 +15,124 @@
         android:textSize="17sp"
         android:padding="24dip"
         android:textColor="#000"/>
+    <ScrollView
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent">
+        <TableLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true">
 
-    <TableLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true">
-
-        <TableRow
-            android:layout_height="wrap_content"
-            android:layout_width="fill_parent"
-            android:gravity="center_horizontal">
-
-
-            <TextView
-                android:layout_width="match_parent" android:layout_height="wrap_content"
-                android:text=""
-                android:padding="18dip"
-                android:textColor="#000"
-                android:layout_column="8" />
-
-
-        </TableRow>
-
-        <TableRow
-            android:layout_height="wrap_content"
-            android:layout_width="fill_parent"
-            android:gravity="center_horizontal">
-
-
-            <TextView
-                android:layout_width="match_parent" android:layout_height="wrap_content"
-                android:text="Escolha a sua pesquisa!"  android:layout_span="4"
-                android:padding="18dip"
-                android:textColor="#000"
-                android:gravity="center"/>
-
-
-        </TableRow>
-
-
-        <TableRow
-            android:layout_height="wrap_content"
-            android:layout_width="fill_parent"
-            android:gravity="center_horizontal">
-
-            <ImageButton
-                android:layout_width="wrap_content"
+            <TableRow
                 android:layout_height="wrap_content"
-                android:id="@+id/imageFestas"
-                android:onClick="onClick"
-                android:layout_column="0"
-                android:src="@drawable/ic_festas_image_button"/>
+                android:layout_width="fill_parent"
+                android:gravity="center_horizontal">
 
 
-            <Button
-                android:scaleType="fitCenter"
-                android:layout_height="50dp"
-                android:height="50dp"
-                android:id="@+id/button_festas"
-                android:text="Festas"
-                android:layout_column="2"
-                android:onClick="onClick">
-            </Button>
+                <TextView
+                    android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:text=""
+                    android:padding="18dip"
+                    android:textColor="#000"
+                    android:layout_column="8" />
 
-        </TableRow>
 
-        <TableRow
-            android:layout_height="wrap_content"
-            android:layout_width="fill_parent"
-            android:gravity="center_horizontal">
+            </TableRow>
 
-            <ImageButton
-                android:layout_width="wrap_content"
+            <TableRow
                 android:layout_height="wrap_content"
-                android:id="@+id/imageAulas"
-                android:onClick="onClick"
-                android:layout_column="0"
-                android:src="@drawable/ic_aulas_image_button"/>
-
-            <Button
-                android:layout_width="wrap_content"
-                android:id="@+id/button_aulas"
-                android:text="Aulas"
-                android:onClick="onClick"
-                android:layout_column="2">
-            </Button>
-        </TableRow>
+                android:layout_width="fill_parent"
+                android:gravity="center_horizontal">
 
 
-        <TableRow
-            android:layout_height="wrap_content"
-            android:layout_width="fill_parent"
-            android:gravity="center_horizontal">
-
-            <TextView
-                android:id="@+id/TextView05" android:text="Row 3 column 1"
-                android:layout_weight="1"  android:background="#b0b0b0"
-                android:textColor="#000000"
-                android:padding="18dip" android:gravity="center"/>
+                <TextView
+                    android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:text="Escolha a sua pesquisa!"  android:layout_span="4"
+                    android:padding="18dip"
+                    android:textColor="#000"
+                    android:gravity="center"/>
 
 
-            <Button
+            </TableRow>
+
+
+            <TableRow
                 android:layout_height="wrap_content"
-                android:id="@+id/button_festivais"
-                android:layout_width="wrap_content"
-                android:text="Festivais"
-                android:onClick="onClick"
-                android:layout_column="2">
-            </Button>
-        </TableRow>
+                android:layout_width="fill_parent"
+                android:gravity="center_horizontal">
+
+                <ImageButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/imageFestas"
+                    android:onClick="onClick"
+                    android:layout_column="0"
+                    android:src="@drawable/ic_festas_image_button"/>
 
 
-    </TableLayout>
+                <Button
+                    android:scaleType="fitCenter"
+                    android:layout_height="50dp"
+                    android:height="50dp"
+                    android:id="@+id/button_festas"
+                    android:text="Festas"
+                    android:layout_column="2"
+                    android:onClick="onClick">
+                </Button>
 
+            </TableRow>
+
+            <TableRow
+                android:layout_height="wrap_content"
+                android:layout_width="fill_parent"
+                android:gravity="center_horizontal">
+
+                <ImageButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/imageAulas"
+                    android:onClick="onClick"
+                    android:layout_column="0"
+                    android:src="@drawable/ic_aulas_image_button"/>
+
+                <Button
+                    android:layout_width="wrap_content"
+                    android:id="@+id/button_aulas"
+                    android:text="Aulas"
+                    android:onClick="onClick"
+                    android:layout_column="2">
+                </Button>
+            </TableRow>
+
+
+            <TableRow
+                android:layout_height="wrap_content"
+                android:layout_width="fill_parent"
+                android:gravity="center_horizontal">
+
+                <ImageButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/imageFestivais"
+                    android:onClick="onClick"
+                    android:layout_column="0"
+                    android:src="@drawable/ic_festivais_image_button"/>
+
+
+                <Button
+                    android:layout_height="wrap_content"
+                    android:id="@+id/button_festivais"
+                    android:layout_width="wrap_content"
+                    android:text="Festivais"
+                    android:onClick="onClick"
+                    android:layout_column="2">
+                </Button>
+            </TableRow>
+
+
+        </TableLayout>
+    </ScrollView>
 </RelativeLayout>
