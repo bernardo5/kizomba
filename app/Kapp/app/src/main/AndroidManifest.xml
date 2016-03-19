@@ -15,9 +15,18 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".FestasActivity" />
-        <activity android:name=".AulasActivity" />
-        <activity android:name=".FestivaisActivity"></activity>
+        <activity
+            android:name=".AulasActivity"
+            android:label="@string/title_activity_aulas"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".FestasActivity"
+            android:label="@string/title_activity_festas"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".FestivaisActivity"
+            android:label="@string/title_activity_festivais"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 
 </manifest>

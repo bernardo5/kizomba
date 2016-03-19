@@ -67,7 +67,7 @@ public class MainActivity extends AppCompatActivity {
                 break;
             case R.id.Site:
                 goToUrl ( "http://web.tecnico.ulisboa.pt/ist175573");
-                break; 
+                break;
         }
     }
 

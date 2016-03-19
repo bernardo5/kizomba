@@ -3,4 +3,7 @@
     <string name="welcome">Bem-vindo! Escolha a sua pesquisa!</string>
     <string name="txtCredits">web.tecnico.ulisboa.pt/ist175573</string>
     <string name="site">Pode sempre visitar o nosso site em web.tecnico.ulisboa.pt/ist175573</string>
+    <string name="title_activity_festas">I like Kizomba - Festas</string>
+    <string name="title_activity_aulas">I like Kizomba - Aulas</string>
+    <string name="title_activity_festivais">I like Kizomba - Festivais</string>
 </resources>
