@@ -11,6 +11,7 @@ import android.view.View.OnClickListener;
 import android.net.Uri;
 import android.content.Intent;
 public class MainActivity extends AppCompatActivity {
+    private static final String TAG = "MainActivity";
     ImageButton imageButton;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,31 +38,32 @@ public class MainActivity extends AppCompatActivity {
 
     }*/
 
+
     public void onClick(final View v){
         switch(v.getId()){
             case R.id.button_festas:
-                Toast.makeText(MainActivity.this,
-                        "FestasButton is clicked!", Toast.LENGTH_SHORT).show();
+                Intent Festas_page = new Intent(this, FestasActivity.class);
+                startActivity(Festas_page);
                 break;
             case R.id.imageFestas:
-                Toast.makeText(MainActivity.this,
-                        "FestasButton is clicked!", Toast.LENGTH_SHORT).show();
+                Intent Festas_pagee = new Intent(this, FestasActivity.class);
+                startActivity(Festas_pagee);
                 break;
             case R.id.button_aulas:
-                Toast.makeText(MainActivity.this,
-                        "AulasButton is clicked!", Toast.LENGTH_SHORT).show();
+                Intent Aulas_page = new Intent(this, AulasActivity.class);
+                startActivity(Aulas_page);
                 break;
             case R.id.imageAulas:
-                Toast.makeText(MainActivity.this,
-                        "AulasButton is clicked!", Toast.LENGTH_SHORT).show();
+                Intent Aulas_pagee = new Intent(this, AulasActivity.class);
+                startActivity(Aulas_pagee);
                 break;
             case R.id.button_festivais:
-                Toast.makeText(MainActivity.this,
-                        "FestivaisButton is clicked!", Toast.LENGTH_SHORT).show();
+                Intent Festivais_page = new Intent(this, FestivaisActivity.class);
+                startActivity(Festivais_page);
                 break;
             case R.id.imageFestivais:
-                Toast.makeText(MainActivity.this,
-                        "FestivaisButton is clicked!", Toast.LENGTH_SHORT).show();
+                Intent Festivais_pagee = new Intent(this, FestivaisActivity.class);
+                startActivity(Festivais_pagee);
                 break;
             case R.id.Site:
                 goToUrl ( "http://web.tecnico.ulisboa.pt/ist175573");
