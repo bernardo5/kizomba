@@ -5,9 +5,15 @@ import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.View;
 
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
 public class AulasActivity extends AppCompatActivity {
+    JSONObject jsonobject;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,6 +30,22 @@ public class AulasActivity extends AppCompatActivity {
                         .setAction("Action", null).show();
             }
         });
-    }
 
+        jsonobject = JSONfunctions.getJSONfromURL("http://web.tecnico.ulisboa.pt/ist175573/send_aulas.php");
+
+        JSONArray jarray= jsonobject.names();
+
+        for(int i=0;i<jarray.length();i++){
+
+            try{
+                Log.e("parenttag", jarray.getString(i));
+            }catch(JSONException e) {
+                    throw new RuntimeException(e);
+            }
+
+        }
+
+    }
 }
+
+
