@@ -46,10 +46,10 @@ public class AulasActivity extends AppCompatActivity {
             }
 
         }*/
-        WebView myWebView = (WebView) findViewById(R.id.webview);
-        myWebView.loadUrl("http://web.tecnico.ulisboa.pt/ist175573/aulas_app.php");
+        WebView myWebViewaulas = (WebView) findViewById(R.id.webviewaulas);
+        myWebViewaulas.loadUrl("http://web.tecnico.ulisboa.pt/ist175573/aulas_app.php");
 
-        myWebView.setWebViewClient(new WebViewClient() {
+        myWebViewaulas.setWebViewClient(new WebViewClient() {
            public boolean shouldOverrideUrlLoading(WebView view, String url) {
                // do your handling codes here, which url is the requested url
                // probably you need to open that url rather than redirect:
