@@ -7,13 +7,14 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.View;
+import android.webkit.WebView;
 
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
 public class AulasActivity extends AppCompatActivity {
-    JSONObject jsonobject;
+    //JSONObject jsonobject;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,7 +32,7 @@ public class AulasActivity extends AppCompatActivity {
             }
         });
 
-        jsonobject = JSONfunctions.getJSONfromURL("http://web.tecnico.ulisboa.pt/ist175573/send_aulas.php");
+       /* jsonobject = JSONfunctions.getJSONfromURL("http://web.tecnico.ulisboa.pt/ist175573/send_aulas.php");
 
         JSONArray jarray= jsonobject.names();
 
@@ -43,8 +44,9 @@ public class AulasActivity extends AppCompatActivity {
                     throw new RuntimeException(e);
             }
 
-        }
-
+        }*/
+        WebView myWebView = (WebView) findViewById(R.id.webview);
+        myWebView.loadUrl("http://web.tecnico.ulisboa.pt/ist175573/aulas_app.php");
     }
 }
 
