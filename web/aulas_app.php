@@ -9,7 +9,7 @@
 
 		 <p>Selecione a informação de pesquisa de entre as possibilidades:</p>
 					<p>Dia da semana:</p>
-					<form action="aulas_result.php">
+					<form action="aulas_result_app.php">
 					<?php
 						$host = "db.ist.utl.pt";
 						$user = "ist175573";
