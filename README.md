@@ -1,3 +1,5 @@
 # kizomba
 
-the purpose of this repository is to develop an app so that people in Portugal and possibly in other countries can find a kizomba party, festival or classes more easily.
+This app was built while studying at University.
+
+the purpose of this app was to build a service where people could search for parties, classes and festivals all in the same place
